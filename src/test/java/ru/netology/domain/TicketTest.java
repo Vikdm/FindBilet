@@ -81,6 +81,38 @@ public class TicketTest {
         assertArrayEquals(actual, expected);
     }
 
+    @Test
+    public void findTest3() {
+        repo.add(ticket1);
+        repo.add(ticket2);
+        repo.add(ticket3);
+        repo.add(ticket4);
+        repo.add(ticket5);
+
+        Ticket[] actual = manager.findTicketManager("FGT", "YTE" );
+        Ticket[] expected = {};
+
+        assertArrayEquals(actual, expected);
+    }
+
+    @Test
+    public void findTest4() {
+
+        Ticket[] actual = manager.findTicketManager("SVO", "COJ");
+        Ticket[] expected = {};
+
+        assertArrayEquals(actual, expected);
+    }
+
+    @Test
+    public void findTest5() {
+        repo.add(ticket1);
+
+        Ticket[] actual = manager.findTicketManager("DME", "COJ");
+        Ticket[] expected = {ticket1};
+
+        assertArrayEquals(actual, expected);
+    }
 
 }
 
